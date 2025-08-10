@@ -16,14 +16,14 @@ app.use(express.json({limit: "10mb"}))
 app.use(express.urlencoded({ extrended: true, limit: "10mb" }))
 app.use(cookieParser())
 app.use(cors({
-    origin: "http://localhost:5174",
+    origin: "http://localhost:5173",
     credentials: true,
 }
     
 ))
 
 app.use("/api/auth", authRoutes)
-app.use("/api/message", messageRoutes)
+app.use("/api/messages", messageRoutes)
 
 app.listen(PORT, () =>{
     console.log("server running on PORT:" + PORT)
